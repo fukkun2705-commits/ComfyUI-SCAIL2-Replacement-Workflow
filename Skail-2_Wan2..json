@@ -1,8 +1,8 @@
 {
   "id": "ba1df054-50a8-4da2-b45a-25b4dde3cc2f",
   "revision": 0,
-  "last_node_id": 1357,
-  "last_link_id": 1863,
+  "last_node_id": 1358,
+  "last_link_id": 1865,
   "nodes": [
     {
       "id": 1296,
@@ -947,53 +947,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 1244,
-      "type": "ModelSamplingSD3",
-      "pos": [
-        -2394.244954642184,
-        -277.3505802115691
-      ],
-      "size": [
-        224.213858982205,
-        79.16053096490316
-      ],
-      "flags": {},
-      "order": 64,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 1846
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [
-            1834
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ModelSamplingSD3",
-        "cnr_id": "comfy-core",
-        "ver": "0.3.59",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "shift": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        5
-      ]
-    },
-    {
       "id": 1241,
       "type": "CLIPLoader",
       "pos": [
@@ -1828,7 +1781,7 @@
         250
       ],
       "flags": {},
-      "order": 70,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -1856,6 +1809,8 @@
         1,
         false,
         "pyramid",
+        false,
+        false,
         false
       ],
       "color": "#223",
@@ -1875,7 +1830,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 72,
+      "order": 73,
       "mode": 0,
       "inputs": [
         {
@@ -2679,7 +2634,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            1846
+            1864
           ]
         }
       ],
@@ -2840,7 +2795,7 @@
       ],
       "size": [
         365.2776362233865,
-        946.4812361205367
+        334
       ],
       "flags": {},
       "order": 65,
@@ -2931,7 +2886,7 @@
         {
           "name": "ref_track_data",
           "shape": 7,
-          "type": "SAM3_TRACK_DATA",
+          "type": "SAM3_TRACK_DATA,MASK",
           "link": 1748
         },
         {
@@ -2980,7 +2935,7 @@
       ],
       "size": [
         376.6053093385617,
-        942.1158695201736
+        310
       ],
       "flags": {},
       "order": 28,
@@ -3365,6 +3320,91 @@
       },
       "widgets_values": [
         "oerson"
+      ]
+    },
+    {
+      "id": 1358,
+      "type": "PathchSageAttentionKJ",
+      "pos": [
+        -2369.593959835952,
+        -450.7646075619868
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1864
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1865
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PathchSageAttentionKJ"
+      },
+      "widgets_values": [
+        "auto",
+        true
+      ]
+    },
+    {
+      "id": 1244,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        -2352.0322491829097,
+        -282.72252115030574
+      ],
+      "size": [
+        224.213858982205,
+        79.16053096490316
+      ],
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1865
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1834
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "shift": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        5
       ]
     }
   ],
@@ -3834,14 +3874,6 @@
       "MODEL"
     ],
     [
-      1846,
-      1351,
-      0,
-      1244,
-      0,
-      "MODEL"
-    ],
-    [
       1852,
       1287,
       0,
@@ -3918,6 +3950,22 @@
       1343,
       0,
       1307,
+      0,
+      "MODEL"
+    ],
+    [
+      1864,
+      1351,
+      0,
+      1358,
+      0,
+      "MODEL"
+    ],
+    [
+      1865,
+      1358,
+      0,
+      1244,
       0,
       "MODEL"
     ]
@@ -3998,7 +4046,7 @@
   ],
   "config": {},
   "extra": {
-    "frontendVersion": "1.45.15",
+    "frontendVersion": "1.45.21",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
@@ -4007,10 +4055,10 @@
     "links_added_by_ue": [],
     "workflowRendererVersion": "LG",
     "ds": {
-      "scale": 0.3266832183594496,
+      "scale": 0.7002744912901032,
       "offset": [
-        4261.6841241713755,
-        1108.6923151041901
+        3762.6734537814095,
+        824.4434687852696
       ]
     }
   },
